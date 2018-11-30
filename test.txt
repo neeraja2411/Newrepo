@@ -1,0 +1,33 @@
+
+
+vi /etc/profile.d/maven.sh
+
+export M2_HOME="/opt/maven/apache-maven-3.6.0"
+export PATH=${M2_HOME}/bin:$PATH
+
+source /etc/profile.d/maven.sh
+
+
+
+MAVEN_HOME="/home/YOUR_NAME/Downloads/apache-maven-3.1.1"
+export MAVEN_HOME
+PATH=$PATH:$MAVEN_HOME/bin
+
+snapshot
+http://ec2-13-233-111-160.ap-south-1.compute.amazonaws.com:8081/repository/Flipkart-Snapshot/
+
+releases
+http://ec2-13-233-111-160.ap-south-1.compute.amazonaws.com:8081/repository/Flipkat-Releases/
+
+<distributionManagement>
+            <repository>
+              <id>nexus</id>
+              <name>Mithun Technologies Releases Nexus Repository</name>
+              <url>http://ec2-13-232-211-176.ap-south-1.compute.amazonaws.com:8081/repository/Flipkat-Releases/</url>
+            </repository>
+            <snapshotRepository>
+              <id>nexus</id>
+              <name>Mithun Technologies Snapshot Nexus Repository </name>
+              <url>http://ec2-13-232-211-176.ap-south-1.compute.amazonaws.com:8081/repository/Flipkart-Snapshot/</url>
+            </snapshotRepository>
+        </distributionManagement>
